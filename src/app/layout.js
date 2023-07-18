@@ -3,9 +3,9 @@
 import "./globals.css";
 import { Inter, Unbounded } from "next/font/google";
 import { useState, useEffect } from "react";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
+import Sidebar from "../../components/Sidebar";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import { config } from "@fortawesome/fontawesome-svg-core";

@@ -37,7 +37,7 @@ h1 {
   line-height: 90px;
 }
 
-h2 {
+h2, h3 {
   font-family: 'Unbounded';
 }
 
@@ -121,6 +121,7 @@ a:hover {
   font-family: 'Unbounded';
 }
 
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -133,3 +134,11 @@ a:hover {
     line-height: 80px;
   }
 }
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 55px;
+    line-height: 80px;
+  }
+}
+

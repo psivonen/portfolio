@@ -1,10 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
 
+import Portfolio from "./sections/Portfolio";
+
 export default function Home() {
   return (
     <main className="main">
-      <link href="/dist/output.css" rel="stylesheet"></link>
       <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-5">
         <div>
           <h1 className="font-bold">
@@ -66,6 +67,9 @@ export default function Home() {
           </p>
         </div>
       </div>
+
+      <Portfolio/>
+
       <div id="contact" className="flex flex-col items-center justify-center gap-5">
           <h2 className="text-2xl">Ota yhteyttä</h2>
           <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg">petra.sivonen@gmail.com</a>

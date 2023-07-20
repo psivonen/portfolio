@@ -26,15 +26,19 @@ body {
   align-items: center;
   padding: 6rem;
   min-height: 100vh;
-  max-width: 1400px;
+  width: min(100%, 1400px);
   margin: auto;
-  gap: 100px;
+}
+
+.section-container {
+  margin-top: 200px;
+  margin-bottom: 200px;
 }
 
 h1 {
   font-family: 'Unbounded';
-  font-size: 90px;
-  line-height: 90px;
+  font-size: 100px;
+  line-height: 100px;
 }
 
 h2, h3 {
@@ -121,6 +125,16 @@ a:hover {
   font-family: 'Unbounded';
 }
 
+.circle {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle at 50% 50%, rgba(45, 13, 95, 1) 0%, rgba(0, 188, 212, 0) 75%, rgba(238, 130, 238, 0) 100%);
+  top: -200px;
+  left: -150px;
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -132,6 +146,11 @@ a:hover {
   h1 {
     font-size: 75px;
     line-height: 80px;
+  }
+
+  .section-container {
+    margin-top: 150px;
+    margin-bottom: 150px;
   }
 }
 

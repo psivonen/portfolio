@@ -31,6 +31,7 @@ const RootLayout = ({ children }) => {
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
         {children}
+        <div className="circle"></div>
         <Footer />
       </body>
     </html>

@@ -3,6 +3,7 @@ import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export default function Contact() {
   return (
+    <div className="section-container">
     <div id="contact" className="flex flex-col items-center justify-center gap-5">
       <h2 className="text-2xl">Ota yhteyttä</h2>
       <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg">
@@ -24,6 +25,7 @@ export default function Contact() {
           <FontAwesomeIcon icon={faInstagram} size="1x" />
         </a>
       </div>
+    </div>
     </div>
   );
 }

@@ -23,7 +23,7 @@ export default function Portfolio() {
           <div>
             <div>
               <p className="text-sm font-light mt-4">Web-ohjelmointi</p>
-              <h3 className="mb-3 font-bold">Projektin nimi</h3>
+              <h3 className="text-lg mb-3 font-bold">Projektin nimi</h3>
             </div>
             <div>
               <p className="text-md font-light">
@@ -38,7 +38,7 @@ export default function Portfolio() {
   );
 
   return (
-    <>
+    <div className="section-container z-10 w-full">
       <div
         id="portfolio"
         className="flex flex-col items-center justify-center gap-5"
@@ -52,6 +52,6 @@ export default function Portfolio() {
         </div>
         {projectGrid}
       </div>
-    </>
+    </div>
   );
 }

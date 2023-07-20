@@ -1,11 +1,12 @@
 export default function About() {
   return (
+    <div className="section-container w-100 z-10">
     <div id="about" className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-3">
       <div>
         <h2 className="text-2xl">Kuka olen?</h2>
       </div>
       <div>
-        <p className="leading-7">
+        <p className="leading-8 font-extralight text-lg">
           Olen motivoitunut ja oma-aloitteisella asenteella varustettu koodarin
           alku, jolta löytyy visuaalista näkemystä ja web-ohjelmointi osaamista
           opiskelujen sekä omien projektien kautta. Tavoitteena on päästä
@@ -34,6 +35,7 @@ export default function About() {
           .
         </p>
       </div>
+    </div>
     </div>
   );
 }

@@ -12,12 +12,11 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
 export const inter = Inter({ subsets: ["latin"] });
-
 export const unbounded = Unbounded({ subsets: ["latin"] });
 
 const RootLayout = ({ children }) => {
   useEffect(() => {
-    document.title = "Portfolio"; // Set the desired title here
+    document.title = "Portfolio";
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +30,8 @@ const RootLayout = ({ children }) => {
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
         {children}
-        <div className="circle"></div>
+        {/*<div className="circle" style={{top: '-500px', left: '-250px'}}></div>
+        <div className="circle" style={{top: '200px', right: '-500px'}}></div>*/}
         <Footer />
       </body>
     </html>

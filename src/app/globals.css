@@ -126,14 +126,13 @@ a:hover {
 }
 
 .circle {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle at 50% 50%, rgba(45, 13, 95, 1) 0%, rgba(0, 188, 212, 0) 75%, rgba(238, 130, 238, 0) 100%);
-  top: -200px;
-  left: -150px;
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(circle at 50% 50%, rgba(45, 13, 95, 1) 0%, rgba(0, 188, 212, 0) 55%, rgba(238, 130, 238, 0) 100%);
   position: absolute;
   z-index: 0;
   border-radius: 50%;
+  opacity: 0.8;
 }
 
 @media (prefers-color-scheme: dark) {

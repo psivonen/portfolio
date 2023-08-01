@@ -1,10 +1,35 @@
+'use client'
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
+import { motion } from "framer-motion";
 
 export default function Contact() {
+
+  const contactVariants = {
+    hide: {
+      opacity: 0,
+      y: -200,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <div className="section-container">
-    <div id="contact" className="flex flex-col items-center justify-center gap-5">
+      <motion.div
+        id="contact"
+        className="flex flex-col items-center justify-center gap-5"
+        initial="hide"
+        whileInView="show"
+        exit="hide"
+        variants={contactVariants}
+      >
       <h2 className="text-2xl">Ota yhteyttä</h2>
       <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg">
         petra.sivonen@gmail.com
@@ -25,7 +50,7 @@ export default function Contact() {
           <FontAwesomeIcon icon={faInstagram} size="1x" />
         </a>
       </div>
-    </div>
+      </motion.div>
     </div>
   );
 }

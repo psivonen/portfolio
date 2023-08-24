@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import { Inter, Unbounded } from "next/font/google";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import Sidebar from "../../components/Sidebar";
@@ -15,9 +15,6 @@ export const inter = Inter({ subsets: ["latin"] });
 export const unbounded = Unbounded({ subsets: ["latin"] });
 
 const RootLayout = ({ children }) => {
-  useEffect(() => {
-    document.title = "Portfolio";
-  }, []);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {

@@ -1,8 +1,8 @@
 "use client";
-
 import { projects } from "../data";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Portfolio() {
   const gridVariants = {
@@ -38,13 +38,12 @@ export default function Portfolio() {
   };
 
   const projectGrid = (
-    <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
-      {/* The key={index} attribute is used to provide a unique identifier for each project in the mapping, using the index value. */}
+    <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
         {projects.map((project) => (
-          <motion.div className="project" key={project} variants={gridVariants}>
+          <motion.div className="project" key={project.id} variants={gridVariants}>
             <div className="overflow-hidden col-span-6 md:col-span-4 lg:col-span-3 aspect-video w-full relative rounded-2xl">
               <Image
-                src={project.image}
+                src={project.thumbnail}
                 alt="web-design"
                 width={600}
                 height={600}
@@ -54,10 +53,10 @@ export default function Portfolio() {
             <div>
               <div>
                 <p className="text-sm font-light mt-4">{project.subtitle}</p>
-                <h3 className="text-lg mb-3 font-bold">{project.title}</h3>
+                <Link href="/details/[id]" as={`details/${(project.id)}`}><h3 className="text-lg mb-3 font-bold">{project.title}</h3></Link>
               </div>
               <div>
-                <p className="text-md font-light">{project.description}</p>
+                <p className="text-md font-light line-clamp-3">{project.description}</p>
               </div>
             </div>
           </motion.div>
@@ -66,13 +65,13 @@ export default function Portfolio() {
   );
 
   return (
-    <div className="section-container z-10 w-full">
+    <div className="section-container w-full">
       <motion.div
         id="portfolio"
         className="flex flex-col items-center justify-center gap-5"
         initial="hide"
         whileInView="show"
-        exit="hide"
+        viewport={{ once: true }}
         variants={portfolioVariants}
       >
         <h2 className="text-2xl">Portfolio</h2>

@@ -20,12 +20,12 @@ export default function Heading() {
   };
 
   return (
-    <div className="section-container w-full z-10 mt-11">
+    <div className="section-container w-full">
         <motion.header
           className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-5"
           initial="hide"
           whileInView="show"
-          exit="hide"
+          viewport={{ once: true }}
           variants={introHeaderVariants}
         >
           <h1 className="font-bold">

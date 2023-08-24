@@ -27,7 +27,7 @@ export default function Contact() {
         className="flex flex-col items-center justify-center gap-5"
         initial="hide"
         whileInView="show"
-        exit="hide"
+        viewport={{ once: true }}
         variants={contactVariants}
       >
       <h2 className="text-2xl">Ota yhteyttä</h2>

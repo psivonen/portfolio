@@ -17,13 +17,13 @@ export default function About() {
   };
 
   return (
-    <div className="section-container w-100 z-10">
+    <div className="section-container w-100">
       <motion.div
         id="about"
         className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-3"
         initial="hide"
         whileInView="show"
-        exit="hide"
+        viewport={{ once: true }}
         variants={aboutVariants}
       >
         <div>

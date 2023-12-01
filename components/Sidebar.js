@@ -55,7 +55,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           />
         </svg>
       </button>
-      <ul className="sidebar-nav leading-relaxed text-xl">
+      <ul className="sidebar-nav leading-relaxed text-4xl">
         <AnimatePresence>
         {isOpen && (
           <motion.aside
@@ -80,6 +80,7 @@ const Sidebar = ({ isOpen, toggle }) => {
                   key={id}
                   href={to}
                   variants={itemVariants}
+                  onClick={toggle}
                 >
                   <li>{name}</li>
                 </motion.a>

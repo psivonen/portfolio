@@ -1,9 +1,9 @@
 export default function Footer() {
   return (
     <>
-      <div className="w-full h-20 sticky top-0 text-sm">
+      <div className="w-full h-20 top-0 text-sm">
         <div className="container mx-auto px-4 h-full">
-          <footer className="flex-1 justify-between items-center h-full w-full grid grid-cols-2">
+          <footer className="h-full flex justify-center items-center flex-col gap-2 lg:flex-row lg:justify-between">
             <div>
               Created with{" "}
               <a
@@ -23,7 +23,7 @@ export default function Footer() {
               </a>
               .
             </div>
-            <div className="ms-auto">&copy; Petra Sivonen 2023. All rights reserved.</div>
+            <div>&copy; Petra Sivonen 2023. All rights reserved.</div>
           </footer>
         </div>
       </div>

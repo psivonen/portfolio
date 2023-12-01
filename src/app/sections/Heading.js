@@ -3,6 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Heading() {
   const introHeaderVariants = {
@@ -20,27 +21,27 @@ export default function Heading() {
   };
 
   return (
-    <div className="section-container w-full">
+    <div className="heading-container w-full lg:w-100">
         <motion.header
-          className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-5"
+          className="flex flex-col lg:flex-row"
           initial="hide"
           whileInView="show"
           viewport={{ once: true }}
           variants={introHeaderVariants}
         >
-          <h1 className="font-bold">
-            Petra
-            <br />
-            Sivonen
+          <div className="flex justify-center flex-col gap-5 lg:w-3/4">
+          <h3 className="text-2xl">
+            Hei, minä olen
+          </h3>
+          <h1 className="text-5xl lg:text-6xl font-bold">
+            Petra Sivonen
           </h1>
-        <div>
-          <p className="text-2xl leading-9 font-light">
-            Olen motivoitunut ja oma-aloitteisella asenteella varustettu
-            koodarin alku, jolta löytyy visuaalista näkemystä ja web-ohjelmointi
-            osaamista opiskelujen sekä omien projektien kautta. Tavoitteena on
-            päästä kehittymään ja oppimaan uutta inspiroivassa työympäristössä.
+          <p className="text-lg lg:text-xl font-light leading-8 lg:w-3/4">
+          Olen motivoitunut ja oma-aloitteisella asenteella varustettu koodarin alku, 
+          jolta löytyy visuaalista näkemystä ja web-ohjelmointi osaamista opiskelujen sekä
+          omien projektien kautta.
           </p>
-          <div className="socials pt-3">
+          <div className="flex justify-start gap-3 socials pb-8">
             <a
               href="https://github.com/psivonen"
               target="_blank"
@@ -56,7 +57,8 @@ export default function Heading() {
               <FontAwesomeIcon icon={faInstagram} size="1x" />
             </a>
           </div>
-        </div>
+          </div>
+        
         </motion.header>
     </div>
   );

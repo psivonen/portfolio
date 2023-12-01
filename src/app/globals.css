@@ -8,6 +8,11 @@
   margin: 0;
 }
 
+html {
+  --scroll-behavior: smooth!important;
+  scroll-behavior: smooth!important;
+} 
+
 html,
 body {
   max-width: 100vw;
@@ -16,7 +21,10 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: #110D26;
+  background: #110d26;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
 }
 
 .main {
@@ -35,14 +43,21 @@ body {
   margin-bottom: 200px;
 }
 
-h1 {
-  font-family: 'Unbounded';
-  font-size: 100px;
-  line-height: 100px;
+.heading-container {
+  margin-top: 180px;
+  margin-bottom: 200px;
 }
 
-h2, h3 {
+h1, h2 {
   font-family: 'Unbounded';
+}
+
+h3 {
+  color: #a8a4be;
+}
+
+p {
+  color: #a8a4be;
 }
 
 a {
@@ -75,8 +90,9 @@ a:hover {
 }
 
 .navbar {
-  background: #110D26;
   margin-bottom: 100px;
+  background: #110d26;
+  border-bottom: 1px solid #201d35;
 }
 
 .logo {
@@ -99,11 +115,6 @@ a:hover {
 
 .sidebar-container {
   background: #110D26;
-}
-
-.socials {
-  display: flex;
-  column-gap: 10px;
 }
 
 .socials a:hover {
@@ -130,14 +141,37 @@ a:hover {
   font-family: 'Unbounded';
 }
 
-.circle {
-  width: 1000px;
-  height: 1000px;
-  background: radial-gradient(circle at 50% 50%, rgba(45, 13, 95, 1) 0%, rgba(0, 188, 212, 0) 55%, rgba(238, 130, 238, 0) 100%);
+.section {
+  scroll-margin-top: 100px;
+}
+
+.active {
+  color: white;
+  margin: 10px;
+  font-size: 15px;
+  position: relative;
+  text-decoration: none;
+}
+
+.active:after {
+  content: '';
+  background: white;
+  height: 2px;
   position: absolute;
-  z-index: 0;
-  border-radius: 50%;
-  opacity: 0.8;
+  bottom: -4px;
+  margin: 0 auto;
+	left: 0;
+  right: 0;
+	width: 100%;
+}
+
+.overlay .overlay-text {
+  transition: .3s ease-in-out;
+  transform: translateY(50%);
+}
+
+.overlay:hover .overlay-text {
+  transform: translateY(0);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -147,21 +181,18 @@ a:hover {
 }
 
 @media screen and (max-width: 1100px) {
-  h1 {
-    font-size: 75px;
-    line-height: 80px;
-  }
-
   .section-container {
     margin-top: 150px;
     margin-bottom: 150px;
   }
+  .heading-container {
+    margin-top: 200px;
+  }
 }
 
 @media screen and (max-width: 500px) {
-  h1 {
-    font-size: 55px;
-    line-height: 80px;
+  .main {
+    padding: 70px;
   }
 }
 

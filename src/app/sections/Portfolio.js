@@ -38,27 +38,27 @@ export default function Portfolio() {
   };
 
   const projectGrid = (
-    <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+    <div className="gap-5 flex flex-col lg:flex-row flex-wrap">
         {projects.map((project) => (
           <motion.div className="project" key={project.id} variants={gridVariants}>
-            <div className="overflow-hidden col-span-6 md:col-span-4 lg:col-span-3 aspect-video w-full relative rounded-2xl">
+            <Link href="/details/[id]" as={`details/${(project.id)}`} className="hover:text-white">
+            <div className="relative transition duration-300 flex-grow">
               <Image
                 src={project.thumbnail}
                 alt="web-design"
-                width={600}
-                height={600}
-                className="hover:scale-125 transition duration-500 cursor-pointer hover:opacity-30 object-contain"
+                width={590}
+                height={700}
+                unoptimized={true}
+                className="object-cover aspect-[4/3]"
               />
-            </div>
-            <div>
-              <div>
-                <p className="text-sm font-light mt-4">{project.subtitle}</p>
-                <Link href="/details/[id]" as={`details/${(project.id)}`}><h3 className="text-lg mb-3 font-bold">{project.title}</h3></Link>
-              </div>
-              <div>
-                <p className="text-md font-light line-clamp-3">{project.description}</p>
+            <div className="overlay cursor-pointer opacity-0 hover:opacity-100 hover:bg-indigo-950 hover:bg-opacity-75 duration-300 absolute inset-0 flex justify-center items-center flex-col">
+              <div className="overlay-text text-center">
+                <p className="text-sm font-light">{project.subtitle}</p>
+                <h4 className="font-bold text-sm uppercase">{project.title}</h4>
               </div>
             </div>
+            </div>
+            </Link>
           </motion.div>
         ))}
     </div>
@@ -68,19 +68,13 @@ export default function Portfolio() {
     <div className="section-container w-full">
       <motion.div
         id="portfolio"
-        className="flex flex-col items-center justify-center gap-5"
+        className="section flex flex-col items-center justify-center gap-5"
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
         variants={portfolioVariants}
       >
         <h2 className="text-2xl">Portfolio</h2>
-        <p className="leading-8 font-extralight text-lg text-center w-7/12 mb-5">
-          The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax
-          quiz prog. Junk MTV quiz graced by fox whelps. Bright vixens jump;
-          dozy fowl quack. Quick wafting zephyrs vex bold Jim. Quick zephyrs
-          blow, vexing daft Jim.
-        </p>
         {projectGrid}
       </motion.div>
     </div>

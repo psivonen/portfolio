@@ -27,8 +27,6 @@ const RootLayout = ({ children }) => {
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />
         {children}
-        {/*<div className="circle" style={{top: '-500px', left: '-250px'}}></div>
-        <div className="circle" style={{top: '200px', right: '-500px'}}></div>*/}
         <Footer />
       </body>
     </html>

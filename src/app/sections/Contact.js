@@ -24,7 +24,7 @@ export default function Contact() {
     <div className="section-container">
       <motion.div
         id="contact"
-        className="flex flex-col items-center justify-center gap-5"
+        className="section flex flex-col items-center justify-center gap-5"
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
@@ -34,7 +34,7 @@ export default function Contact() {
       <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg">
         petra.sivonen@gmail.com
       </a>
-      <div className="socials pt-3">
+      <div className="socials pt-3 flex justify-center gap-3">
         <a
           href="https://github.com/psivonen"
           target="_blank"

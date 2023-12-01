@@ -40,6 +40,7 @@ export default function ProjectDetails({ project }) {
           width={1000}
           height={300}
           unoptimized={true}
+          className="border border-gray-800"
         />
       ))}
     </div>
@@ -56,7 +57,7 @@ export default function ProjectDetails({ project }) {
         variants={projectVariants}
       >
         <div className="mb-10">
-          <Link href="/#portfolio" className="opacity-50 hover:opacity-100 hover:text-white p-0 text-center inline-flex items-center">
+          <Link href="/#portfolio" className="opacity-30 hover:opacity-100 hover:text-white p-0 text-center inline-flex items-center">
             <ArrowLongLeftIcon className="h-6 w-6 inline-block me-3 p-0"/> Portfolio
           </Link>
         </div>
@@ -66,18 +67,20 @@ export default function ProjectDetails({ project }) {
         </p>
         <ul className="mt-2 flex flex-wrap">
           {project.stack.map((tech, index) => (
-            <li key={index} className="mr-2 mb-2 opacity-50 hover:opacity-100 inline-flex transition-all cursor-pointer">
+            <li key={index} className="mr-2 mb-2 opacity-30 hover:opacity-100 inline-flex transition duration-300 cursor-pointer">
               #{tech}
             </li>
           ))}
         </ul>
         <div className="mt-60">{imageGrid}</div>
         <div className="mt-10 flex justify-center gap-3">
-          <button type="button" className="inline-flex items-center transition-all text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
-             Demo <ArrowUpRightIcon className="h-5 w-5 inline-block"/>  
-          </button>
+          <Link href={project.demo} target="_blank">
+            <button type="button" className="inline-flex items-center transition duration-300 text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+              Demo <ArrowUpRightIcon className="h-5 w-5 inline-block"/>  
+            </button>
+          </Link>
           <Link href={project.github} target="_blank">
-            <button type="button" className="inline-flex items-center transition-all text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+            <button type="button" className="inline-flex items-center transition duration-300 text-purple-700 hover:text-white border border-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
               Github <ArrowUpRightIcon className="h-5 w-5 inline-block"/>
             </button>
           </Link>

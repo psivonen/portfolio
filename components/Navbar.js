@@ -1,12 +1,15 @@
 import Link from "next/link";
 
 export default function Navbar({ toggle }) {
+
   return (
     <>
       <div className="w-full h-20 top-0 z-10 fixed navbar">
         <div className="container mx-auto px-4 h-full">
           <div className="flex-1 justify-between items-center h-full w-full grid grid-cols-2">
-            <Link href="/" className="hover:text-white"><div className="logo">Petra Sivonen</div></Link>
+            <Link href="/" className="hover:text-white" onClick={() => handleLinkClick('/')}>
+              <div className="logo">Petra Sivonen</div>
+            </Link>
             <button
               type="button"
               className="inline-flex items-center md:hidden ms-auto"
@@ -27,15 +30,22 @@ export default function Navbar({ toggle }) {
             </button>
             <ul className="hidden md:flex gap-x-6 text-white ms-auto">
               <li>
-              <Link href="/#about">Kuka olen</Link>
+                <Link href="/" className='nav-link'>
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/#portfolio" className="nav-link">
+                <Link href="/#about" className='nav-link'>
+                  Kuka olen
+                </Link>
+              </li>
+              <li>
+                <Link href="/#portfolio" className='nav-link'>
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/#contact" className="nav-link">
+                <Link href="/#contact" className='nav-link'>
                   Ota yhteyttä
                 </Link>
               </li>

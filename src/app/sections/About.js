@@ -1,5 +1,6 @@
-'use client'
+"use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function About() {
   const aboutVariants = {
@@ -17,10 +18,10 @@ export default function About() {
   };
 
   return (
-    <div className="section-container w-100">
+    <div className="section-container w-full">
       <motion.div
         id="about"
-        className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2 gap-3"
+        className="section grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-2"
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
@@ -28,17 +29,25 @@ export default function About() {
       >
         <div>
           <h2 className="text-2xl">Kuka olen?</h2>
+          <Image
+                src="Images/petra-sivonen.jpg"
+                alt="Petra"
+                width={150}
+                height={150}
+                unoptimized={true}
+                className="object-cover aspect-square rounded-full mt-5"
+              />
         </div>
         <div>
-          <p className="leading-8 font-extralight text-lg">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax
-            quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick
-            quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs
-            grab quick-jived waltz. Brick quiz whangs jumpy veldt fox. Bright
-            vixens jump; dozy fowl quack. Quick wafting zephyrs vex bold Jim.
-            Quick zephyrs blow, vexing daft Jim. Sex-charged fop blew my junk TV
-            quiz. How quickly daft jumping zebras vex. Two driven jocks help fax
-            my big quiz.
+          <p className="leading-8 text-lg font-light">
+            Olen koulutukseltani tietojenkäsittelyn tradenomi, jolta löytyy
+            monipuolista ohjelmointi osaamista. Visuaalisena ihmisenä minua
+            kiinnostaa eniten front end ohjelmointi, mutta back end osaamista
+            löytyy myös. Aiempien opintojen kautta löytyy graafisen suunnittelun
+            kokemusta. Olen tehokas tiimi työskentelijä, mutta kykenen myös
+            itsenäiseen työskentelyyn, enkä pelkää ottaa vastuuta. Haluan
+            kehittyä jatkuvasti, joten uuden oppiminen ei pelota, vaan innolla
+            otan uusia haasteita vastaan.
             <br />
             <br />
             Vapaa ajalla käytän aikaa viherkasvieni parissa, harrastan

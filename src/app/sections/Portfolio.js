@@ -33,31 +33,29 @@ export default function Portfolio() {
         duration: 1,
         staggerChildren: 0.6,
         staggerDirection: 1,
+        delayChildren: 0.5
       },
     },
   };
 
   const projectGrid = (
-    <div className="gap-5 flex flex-col lg:flex-row flex-wrap">
+    <div className="grid gap-10 grid-cols-1 sm:grid-cols-2">
         {projects.map((project) => (
           <motion.div className="project" key={project.id} variants={gridVariants}>
-            <Link href="/details/[id]" as={`details/${(project.id)}`} className="hover:text-white">
-            <div className="relative transition duration-300 flex-grow">
+            <Link href="/details/[id]" as={`details/${(project.id)}`}>
               <Image
                 src={project.thumbnail}
-                alt="web-design"
-                width={590}
-                height={700}
+                alt={project.title}
+                height={400}
+                width={650}
                 unoptimized={true}
-                className="object-cover aspect-[4/3]"
+                className="object-cover aspect-[4/3] transition ease-linear duration-300 hover:scale-[1.02]"
               />
-            <div className="overlay cursor-pointer opacity-0 hover:opacity-100 hover:bg-indigo-950 hover:bg-opacity-75 duration-300 absolute inset-0 flex justify-center items-center flex-col">
-              <div className="overlay-text text-center">
-                <p className="text-sm font-light">{project.subtitle}</p>
-                <h4 className="font-bold text-sm uppercase">{project.title}</h4>
+              <div className="mt-7">
+                <p className="text-xs font-bold uppercase">{project.subtitle}</p>
+                <h4 className="text-sm lg:text-lg font-bold transition ease-linear duration-200 hover:text-purple-500">{project.title}</h4>
+                <p className="text-sm lg:text-base line-clamp-2 w-3/4">{project.description}</p>
               </div>
-            </div>
-            </div>
             </Link>
           </motion.div>
         ))}
@@ -68,13 +66,13 @@ export default function Portfolio() {
     <div className="section-container w-full">
       <motion.div
         id="portfolio"
-        className="section flex flex-col items-center justify-center gap-5"
+        className="section flex flex-col gap-5"
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
         variants={portfolioVariants}
       >
-        <h2 className="text-2xl">Portfolio</h2>
+        <h2 className="text-2xl lg:text-4xl mb-10">Portfolio</h2>
         {projectGrid}
       </motion.div>
     </div>

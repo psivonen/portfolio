@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <div className="w-full h-20 top-0 text-sm">
+      <div className="w-full h-20 top-0 text-sm footer">
         <div className="container mx-auto px-4 h-full">
           <footer className="h-full flex justify-center items-center flex-col gap-2 lg:flex-row lg:justify-between">
             <div>

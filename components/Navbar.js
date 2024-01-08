@@ -7,12 +7,12 @@ export default function Navbar({ toggle }) {
       <div className="w-full h-20 top-0 z-10 fixed navbar">
         <div className="container mx-auto px-4 h-full">
           <div className="flex-1 justify-between items-center h-full w-full grid grid-cols-2">
-            <Link href="/" className="hover:text-white" onClick={() => handleLinkClick('/')}>
+            <Link href="/" className="hover:text-white">
               <div className="logo">Petra Sivonen</div>
             </Link>
             <button
               type="button"
-              className="inline-flex items-center md:hidden ms-auto"
+              className="inline-flex items-center lg:hidden ms-auto"
               onClick={toggle}
             >
               {/* Menu icon */}
@@ -28,7 +28,7 @@ export default function Navbar({ toggle }) {
                 />
               </svg>
             </button>
-            <ul className="hidden md:flex gap-x-6 text-white ms-auto">
+            <ul className="hidden lg:flex gap-x-6 text-white ms-auto">
               <li>
                 <Link href="/" className='nav-link'>
                   Home

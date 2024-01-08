@@ -21,7 +21,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="section-container">
+    <div className="section-container contact">
       <motion.div
         id="contact"
         className="section flex flex-col items-center justify-center gap-5"
@@ -30,26 +30,10 @@ export default function Contact() {
         viewport={{ once: true }}
         variants={contactVariants}
       >
-      <h2 className="text-2xl">Ota yhteyttä</h2>
-      <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg">
+      <h2 className="text-2xl lg:text-4xl">Ota yhteyttä</h2>
+      <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg lg:text-3xl">
         petra.sivonen@gmail.com
       </a>
-      <div className="socials pt-3 flex justify-center gap-3">
-        <a
-          href="https://github.com/psivonen"
-          target="_blank"
-          className="social-icon"
-        >
-          <FontAwesomeIcon icon={faGithub} size="1x" />
-        </a>
-        <a
-          href="https://www.instagram.com/petrasivonen/"
-          target="_blank"
-          className="social-icon"
-        >
-          <FontAwesomeIcon icon={faInstagram} size="1x" />
-        </a>
-      </div>
       </motion.div>
     </div>
   );

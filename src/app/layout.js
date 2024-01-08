@@ -23,6 +23,11 @@ const RootLayout = ({ children }) => {
 
   return (
     <html lang="fi">
+      <head>
+        <title>
+          Petra Sivonen - Portfolio
+        </title>
+      </head>
       <body>
         <Sidebar isOpen={isOpen} toggle={toggle} />
         <Navbar toggle={toggle} />

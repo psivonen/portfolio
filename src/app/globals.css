@@ -17,6 +17,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -32,7 +33,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 0rem 3rem;
   min-height: 100vh;
   width: min(100%, 1400px);
   margin: auto;
@@ -48,7 +49,12 @@ body {
   margin-bottom: 200px;
 }
 
-h1, h2 {
+.contact {
+  margin-top: 200px;
+  margin-bottom: 350px;
+}
+
+h1, h2, h4 {
   font-family: 'Unbounded';
 }
 
@@ -117,26 +123,6 @@ a:hover {
   background: #110D26;
 }
 
-.socials a:hover {
-  color: white;
-}
-
-.social-icon {
-  border-radius: 50%;
-  outline: solid 1px #fff;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.5;
-  transition: ease-in-out .3s;
-}
-
-.social-icon:hover {
-  opacity: 1;
-}
-
 .contact-link {
   font-family: 'Unbounded';
 }
@@ -165,13 +151,8 @@ a:hover {
 	width: 100%;
 }
 
-.overlay .overlay-text {
-  transition: .3s ease-in-out;
-  transform: translateY(50%);
-}
-
-.overlay:hover .overlay-text {
-  transform: translateY(0);
+.footer {
+  border-top: 1px solid #201d35;
 }
 
 @media (prefers-color-scheme: dark) {

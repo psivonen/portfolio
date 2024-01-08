@@ -1,9 +1,10 @@
 import { AnimatePresence, motion} from "framer-motion";
 
 const links = [
-  { name: "Kuka olen", to: "/#about", id: 1 },
-  { name: "Portfolio", to: "/#portfolio", id: 2 },
-  { name: "Ota yhteyttä", to: "/#contact", id: 3 }
+  { name: "Home", to: "/", id: 1 },
+  { name: "Kuka olen", to: "/#about", id: 2 },
+  { name: "Portfolio", to: "/#portfolio", id: 3 },
+  { name: "Ota yhteyttä", to: "/#contact", id: 4 }
 ];
 
 const itemVariants = {

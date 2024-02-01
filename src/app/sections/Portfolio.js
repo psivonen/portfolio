@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 export default function Portfolio() {
+
   const gridVariants = {
     hide: {
       opacity: 0,
@@ -12,11 +13,11 @@ export default function Portfolio() {
     show: { 
       opacity: 1,
       transition: {
-        duration: 0.5,
+        duration: 0.8,
       } 
     },
   };
-
+  // Portfolio elements appear one by one
   const portfolioVariants = {
     hide: {
       opacity: 0,
@@ -43,18 +44,19 @@ export default function Portfolio() {
         {projects.map((project) => (
           <motion.div className="project" key={project.id} variants={gridVariants}>
             <Link href="/details/[id]" as={`details/${(project.id)}`}>
-              <Image
-                src={project.thumbnail}
-                alt={project.title}
-                height={400}
-                width={650}
-                unoptimized={true}
-                className="object-cover aspect-[4/3] transition ease-linear duration-300 hover:scale-[1.02]"
+              <div className="aspect-[4/3] overflow-hidden">
+                <Image
+                  src={project.thumbnail}
+                  alt={project.title}
+                  height={400}
+                  width={650}
+                  unoptimized={true}
+                  className="object-cover h-full transition ease-in-out duration-300 hover:scale-105"
               />
+              </div>
               <div className="mt-7">
-                <p className="text-xs font-bold uppercase">{project.subtitle}</p>
+                <p className="text-sm font-lighter">{project.subtitle}</p>
                 <h4 className="text-sm lg:text-lg font-bold transition ease-linear duration-200 hover:text-purple-500">{project.title}</h4>
-                <p className="text-sm lg:text-base line-clamp-2 w-3/4">{project.description}</p>
               </div>
             </Link>
           </motion.div>

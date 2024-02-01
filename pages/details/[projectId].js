@@ -79,7 +79,7 @@ export default function ProjectDetails({ project }) {
           </Link>
         </div>
         <h1 className="text-2xl lg:text-4xl mb-10">{project.title}</h1>
-        <p className="text-lg leading-9 font-light mb-7">
+        <p className="text-lg leading-9 mb-7">
           {project.description}
         </p>
         <ul className="mt-2 flex flex-wrap">

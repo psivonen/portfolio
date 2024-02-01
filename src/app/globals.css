@@ -35,7 +35,7 @@ body {
   align-items: center;
   padding: 0rem 3rem;
   min-height: 100vh;
-  width: min(100%, 1400px);
+  width: min(100%, 1420px);
   margin: auto;
 }
 
@@ -51,11 +51,12 @@ body {
 
 .contact {
   margin-top: 200px;
-  margin-bottom: 350px;
+  margin-bottom: 450px;
 }
 
 h1, h2, h4 {
-  font-family: 'Unbounded';
+  font-family: 'Montserrat';
+  font-weight: bold;
 }
 
 h3 {
@@ -102,10 +103,7 @@ a:hover {
 }
 
 .logo {
-  width: 50vw;
-  margin-left: 20px;
-  font-family: 'Unbounded';
-  text-transform: uppercase;
+  font-family: 'Montserrat';
 }
 
 .nav-links {
@@ -124,7 +122,8 @@ a:hover {
 }
 
 .contact-link {
-  font-family: 'Unbounded';
+  font-family: 'Montserrat';
+  font-weight: bold;
 }
 
 .section {
@@ -153,6 +152,12 @@ a:hover {
 
 .footer {
   border-top: 1px solid #201d35;
+  background: #110d26;
+  color: #a8a4be;
+}
+
+.footer a {
+  color: #fff
 }
 
 @media (prefers-color-scheme: dark) {

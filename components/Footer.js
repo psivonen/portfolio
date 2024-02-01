@@ -1,9 +1,11 @@
 export default function Footer() {
+
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
-      <div className="w-full h-20 top-0 text-sm footer">
-        <div className="container mx-auto px-4 h-full">
-          <footer className="h-full flex justify-center items-center flex-col gap-2 lg:flex-row lg:justify-between">
+      <div className="w-full bottom-0 fixed h-20 text-xs leading-6 lg:text-sm footer">
+          <footer className="max-w-screen-xl mx-auto h-full flex justify-center items-center flex-col md:flex-row md:justify-between p-9">
             <div>
               Created with{" "}
               <a
@@ -23,9 +25,8 @@ export default function Footer() {
               </a>
               .
             </div>
-            <div>&copy; Petra Sivonen 2023. All rights reserved.</div>
+            <div>&copy; Petra Sivonen {currentYear}. All rights reserved.</div>
           </footer>
-        </div>
       </div>
     </>
   );

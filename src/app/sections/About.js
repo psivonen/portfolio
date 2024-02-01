@@ -6,13 +6,13 @@ export default function About() {
   const aboutVariants = {
     hide: {
       opacity: 0,
-      y: -200,
+      y: -50,
     },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
+        duration: 0.8,
       },
     },
   };
@@ -21,7 +21,7 @@ export default function About() {
     <div className="section-container w-full">
       <motion.div
         id="about"
-        className="section grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-y-8"
+        className="section grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 gap-y-7 gap-x-10"
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
@@ -29,17 +29,21 @@ export default function About() {
       >
         <div className="lg:col-span-2">
           <h2 className="text-2xl lg:text-4xl mb-5">Kuka olen?</h2>
-          <p className="leading-8 font-light lg:leading-10 lg:text-xl">
-            Olen koulutukseltani <span className="text-white">tietojenkäsittelyn tradenomi</span>, jolta löytyy
-            monipuolista ohjelmointi osaamista. Visuaalisena ihmisenä minua
-            kiinnostaa eniten <span className="text-white">front end</span> ohjelmointi, mutta back end osaamista
-            löytyy myös. Aiempien opintojen kautta löytyy <span className="text-white">graafisen suunnittelun</span> kokemusta. 
+          <p className="leading-8 lg:leading-10 lg:text-xl">
+            Olen{" "}
+            <span className="text-white">tietojenkäsittelyn tradenomi</span>,
+            jolta löytyy ohjelmointi osaamista opiskelujen sekä omien projektien
+            kautta. Olen visuaalinen ihminen, joten erityisesti olen painottunut{" "}
+            <span className="text-white">front end</span> puoleen. Tuttuja
+            juttuja ovat esimerkiksi HTML, CSS, JavaScript, React ja uusimpana
+            Next.js. Koodaamisen lisäksi minulla on kokemusta{" "}
+            <span className="text-white">UI/UX-suunnittelusta</span> ja{" "}
+            <span className="text-white">palvelumuotoilusta</span>. Haluan
+            kehittyä jatkuvasti, joten otan innolla{" "}
+            <span className="text-white">uusia haasteita vastaan</span>.
             <br />
             <br />
-            Olen tehokas tiimi työskentelijä, mutta kykenen myös
-            itsenäiseen työskentelyyn, enkä pelkää ottaa vastuuta. Haluan
-            kehittyä jatkuvasti, joten uuden oppiminen ei pelota, vaan innolla
-            otan uusia haasteita vastaan. Vapaa ajalla käytän aikaa viherkasvieni parissa, harrastan
+            Vapaa ajalla käytän aikaa viherkasvieni parissa, harrastan
             valokuvausta sekä teen käsitöitä. Ottamiani valokuvia voi katsella{" "}
             <a
               href="https://www.instagram.com/petrasivonen/"
@@ -55,8 +59,8 @@ export default function About() {
           <Image
             src="Images/petra-sivonen.jpg"
             alt="Petra Sivonen"
-            width={300}
-            height={300}
+            width={400}
+            height={400}
             unoptimized={true}
             className="object-cover aspect-square mt-5"
           />
@@ -65,9 +69,9 @@ export default function About() {
           <a
             href="/Petra-Sivonen-CV.pdf"
             target="_blank"
-            className="link-underline text-white text-xl"
+            className="link-underline text-white lg:text-xl"
           >
-            Ansioluettelo
+            Lataa CV
           </a>
         </div>
       </motion.div>

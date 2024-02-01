@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, toggle }) => {
           />
         </svg>
       </button>
-      <ul className="sidebar-nav leading-relaxed text-4xl">
+      <ul className="sidebar-nav leading-loose text-4xl flex items-center">
         <AnimatePresence>
         {isOpen && (
           <motion.aside
@@ -70,7 +70,7 @@ const Sidebar = ({ isOpen, toggle }) => {
             }}
           >
             <motion.div
-              className="container"
+              className="container text-center"
               initial="closed"
               animate="open"
               exit="closed"
@@ -91,6 +91,26 @@ const Sidebar = ({ isOpen, toggle }) => {
         )}
       </AnimatePresence>
       </ul>
+      <div className="flex justify-center items-end gap-7 pb-10 lg:text-lg">
+            <a
+              href="https://github.com/psivonen"
+              target="_blank"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.instagram.com/petrasivonen/"
+              target="_blank"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.behance.net/petrasivonen"
+              target="_blank"
+            >
+              Bēhance
+            </a>
+          </div>
     </div>
   );
 };

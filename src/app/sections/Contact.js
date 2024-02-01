@@ -9,13 +9,13 @@ export default function Contact() {
   const contactVariants = {
     hide: {
       opacity: 0,
-      y: -200,
+      y: -50,
     },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 1,
+        duration: 0.8,
       },
     },
   };

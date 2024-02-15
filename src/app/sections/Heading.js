@@ -31,7 +31,7 @@ export default function Heading() {
             motivoitunut ja oma-aloitteisella asenteella varustettu koodarin
             alku, jolta löytyy intohimoa kiinnostavien ja{" "}
             <span className="text-white">
-              käyttäjäystävällisten digitaalisten palveluiden
+              käyttäjäystävällisien digitaalisten palveluiden
             </span>{" "}
             luomiseen. Olen valmis ottamaan haasteet vastaan, jatkuvasti
             kehittyvässä digitaalisessa maailmassa.

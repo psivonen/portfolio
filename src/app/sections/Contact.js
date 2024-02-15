@@ -30,8 +30,8 @@ export default function Contact() {
         viewport={{ once: true }}
         variants={contactVariants}
       >
-      <h2 className="text-2xl lg:text-4xl">Ota yhteyttä</h2>
-      <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg lg:text-3xl">
+      <h2 className="text-2xl lg:text-4xl font-bold">Ota yhteyttä</h2>
+      <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg lg:text-3xl font-bold">
         petra.sivonen@gmail.com
       </a>
       </motion.div>

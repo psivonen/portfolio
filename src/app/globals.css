@@ -17,7 +17,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Manrope', sans-serif;
 }
 
 body {
@@ -54,13 +54,17 @@ body {
   margin-bottom: 450px;
 }
 
-h1, h2, h4 {
-  font-family: 'Montserrat';
+h1, h2 {
+  font-family: 'Syne';
   font-weight: bold;
 }
 
 h3 {
   color: #a8a4be;
+}
+
+h4 {
+  font-family: 'Manrope';
 }
 
 p {
@@ -103,7 +107,7 @@ a:hover {
 }
 
 .logo {
-  font-family: 'Montserrat';
+  font-family: 'Syne';
 }
 
 .nav-links {
@@ -122,8 +126,7 @@ a:hover {
 }
 
 .contact-link {
-  font-family: 'Montserrat';
-  font-weight: bold;
+  font-family: 'Syne';
 }
 
 .section {

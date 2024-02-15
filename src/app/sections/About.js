@@ -28,7 +28,7 @@ export default function About() {
         variants={aboutVariants}
       >
         <div className="lg:col-span-2">
-          <h2 className="text-2xl lg:text-4xl mb-5">Kuka olen?</h2>
+          <h2 className="text-2xl lg:text-5xl mb-5">Minusta</h2>
           <p className="leading-8 lg:leading-10 lg:text-xl">
             Olen{" "}
             <span className="text-white">tietojenkäsittelyn tradenomi</span>,

@@ -5,7 +5,7 @@ export default function Navbar({ toggle }) {
     <div className="w-full h-20 top-0 z-10 fixed navbar">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full w-full p-10">
         <Link href="/" className="hover:text-white">
-          <div className="logo font-bold text-lg">Petra Sivonen</div>
+          <div className="logo font-bold text-lg uppercase">Petra Sivonen</div>
         </Link>
         <button
           type="button"
@@ -30,7 +30,7 @@ export default function Navbar({ toggle }) {
           </li>
           <li>
             <Link href="/#about" className="nav-link">
-              Kuka olen
+              Minusta
             </Link>
           </li>
           <li>

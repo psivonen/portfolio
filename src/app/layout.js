@@ -1,7 +1,7 @@
 "use client";
 
 import "./globals.css";
-import { Inter, Unbounded, Montserrat } from "next/font/google";
+import { Inter, Unbounded, Montserrat, Manrope, Syne } from "next/font/google";
 import { useState } from "react";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -14,6 +14,8 @@ config.autoAddCss = false;
 export const inter = Inter({ subsets: ["latin"] });
 export const unbounded = Unbounded({ subsets: ["latin"] });
 export const montserrat = Montserrat({ subsets: ["latin"] });
+export const manrope = Manrope({ subsets: ["latin"] });
+export const syne = Syne({ subsets: ["latin"] });
 
 const RootLayout = ({ children }) => {
 

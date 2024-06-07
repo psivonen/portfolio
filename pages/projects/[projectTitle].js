@@ -24,13 +24,6 @@ export async function getStaticProps({ params }) {
     params.projectTitle === project.title.toLowerCase().replace(/\s+/g, '-')
   );
 
-    // If project not found, return not found
-    if (!project) {
-      return {
-        notFound: true,
-      };
-    }
-
   return {
     props: {
       project,
@@ -49,7 +42,7 @@ export default function ProjectDetails({ project }) {
   const projectVariants = {
     hide: {
       opacity: 0,
-      y: -50,
+      y: 50,
       transition: {
         staggerChildren: 1,
         staggerDirection: -1,
@@ -71,7 +64,7 @@ export default function ProjectDetails({ project }) {
   const gridVariants = {
     hide: {
       opacity: 0,
-      y: -20,
+      y: 20,
     },
     show: {
       opacity: 1,

@@ -24,6 +24,13 @@ export async function getStaticProps({ params }) {
     params.projectTitle === project.title.toLowerCase().replace(/\s+/g, '-')
   );
 
+    // If project not found, return not found
+    if (!project) {
+      return {
+        notFound: true,
+      };
+    }
+
   return {
     props: {
       project,

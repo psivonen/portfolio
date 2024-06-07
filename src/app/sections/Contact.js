@@ -1,39 +1,85 @@
-'use client'
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faInstagram, faGithub } from "@fortawesome/free-brands-svg-icons";
+"use client";
 import { motion } from "framer-motion";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Contact() {
-
+  // Framer Motion animation for main div
   const contactVariants = {
     hide: {
       opacity: 0,
-      y: -50,
+      y: 50,
     },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        duration: 0.5,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+  // Framer Motion animation for children elements inside div
+  const itemVariants = {
+    hide: {
+      opacity: 0,
+      y: 50,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
       },
     },
   };
 
   return (
-    <div className="section-container contact">
+    <div className="contact w-full flex items-center">
       <motion.div
         id="contact"
-        className="section flex flex-col items-center justify-center gap-5"
+        className="flex flex-col gap-10"
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
         variants={contactVariants}
       >
-      <h2 className="text-2xl lg:text-4xl font-bold">Ota yhteyttä</h2>
-      <a href="mailto:petra.sivonen@gmail.com" className="contact-link text-lg lg:text-3xl font-bold">
-        petra.sivonen@gmail.com
-      </a>
+        <div className="flex flex-col">
+          <h4 className="lg:text-2xl">Ota yhteyttä</h4>
+          <motion.div variants={itemVariants} className="flex gap-4">
+            <a
+              href="mailto:petra.sivonen@gmail.com"
+              className="text-2xl md:text-5xl font-bold"
+            >
+              petra.sivonen@gmail.com
+            </a>
+          </motion.div>
+          <motion.div
+            variants={itemVariants}
+            className="flex justify-start gap-5 lg:text-xl mt-8"
+          >
+            <a
+              href="https://github.com/psivonen"
+              target="_blank"
+              className="link-underline flex items-center"
+            >
+              Github <ArrowRightIcon className="h-5 w-5 arrowAnimate" />
+            </a>
+            <a
+              href="https://www.behance.net/petrasivonen"
+              target="_blank"
+              className="link-underline flex items-center"
+            >
+              Bēhance <ArrowRightIcon className="h-5 w-5 arrowAnimate" />
+            </a>
+            <a
+              href="https://www.instagram.com/petrasivonen/"
+              target="_blank"
+              className="link-underline flex items-center"
+            >
+              Instagram <ArrowRightIcon className="h-5 w-5 arrowAnimate" />
+            </a>
+          </motion.div>
+        </div>
       </motion.div>
     </div>
   );

@@ -7,9 +7,11 @@ export default function Home() {
   return (
     <main className="main">
       <Heading/>
-      <About/>
-      <Portfolio/>
-      <Contact/>
+      <div className="gap-36 lg:gap-80 main-content">
+        <About/>
+        <Portfolio/>
+        <Contact/>
+      </div>
     </main>
   );
 }

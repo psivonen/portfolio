@@ -1,66 +1,82 @@
 "use client";
 import { motion } from "framer-motion";
+import { ArrowRightIcon } from "@heroicons/react/20/solid";
 
 export default function Heading() {
+  // Framer Motion animation for main div
   const introHeaderVariants = {
     hide: {
       opacity: 0,
-      y: -50,
+      y: 50,
     },
     show: {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.8,
+        staggerChildren: 0.2,
+        duration: 0.5,
+      },
+    },
+  };
+  // Framer Motion animation for children elements inside div
+  const itemVariants = {
+    hide: {
+      opacity: 0,
+      y: 50,
+    },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
       },
     },
   };
 
   return (
-    <div className="w-full h-screen flex justify-center items-center">
-      <motion.header
-        className="flex flex-col lg:flex-row"
+    <div className="w-full h-screen flex justify-center items-center flex-col lg:flex-row pt-52 lg:pt-20 pb-40 lg:pb-0">
+      <motion.div
         initial="hide"
         whileInView="show"
         viewport={{ once: true }}
         variants={introHeaderVariants}
+        className="flex justify-center flex-col gap-10"
       >
-        <div className="flex justify-center flex-col gap-5">
-          <p className="text-2xl lg:text-5xl lg:leading-12 break-words">
-            Hei, olen <span className="text-white">Petra Sivonen</span>. Olen
-            motivoitunut ja oma-aloitteisella asenteella varustettu koodarin
-            alku, jolta löytyy intohimoa kiinnostavien ja{" "}
-            <span className="text-white">
-              käyttäjäystävällisien digitaalisten palveluiden
-            </span>{" "}
-            luomiseen. Olen valmis ottamaan haasteet vastaan, jatkuvasti
-            kehittyvässä digitaalisessa maailmassa.
-          </p>
-          <div className="flex justify-start gap-7 pt-5 lg:text-lg">
-            <a
-              href="https://github.com/psivonen"
-              target="_blank"
-              className="link-underline"
-            >
-              Github
-            </a>
-            <a
-              href="https://www.instagram.com/petrasivonen/"
-              target="_blank"
-              className="link-underline"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://www.behance.net/petrasivonen"
-              target="_blank"
-              className="link-underline"
-            >
-              Bēhance
-            </a>
-          </div>
-        </div>
-      </motion.header>
+        <motion.h1
+          className="text-5xl font-bold lg:text-8xl break-words"
+          variants={itemVariants}
+        >
+          Hei, olen <span className="text-white">Petra Sivonen</span>,
+          intohimoinen <span className="text-white">suunnittelija</span> ja{" "}
+          <span className="text-white">kehittäjä</span>.
+        </motion.h1>
+        <motion.div
+          className="flex justify-start gap-5 lg:text-xl"
+          variants={itemVariants}
+        >
+          <a
+            href="https://github.com/psivonen"
+            target="_blank"
+            className="link-underline flex items-center"
+          >
+            Github <ArrowRightIcon className="h-5 w-5 arrowAnimate" />
+          </a>
+          <a
+            href="https://www.behance.net/petrasivonen"
+            target="_blank"
+            className="link-underline flex items-center"
+          >
+            Bēhance <ArrowRightIcon className="h-5 w-5 arrowAnimate" />
+          </a>
+          <a
+            href="https://www.instagram.com/petrasivonen/"
+            target="_blank"
+            className="link-underline flex items-center"
+          >
+            Instagram <ArrowRightIcon className="h-5 w-5 arrowAnimate" />
+          </a>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

@@ -1,11 +1,12 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export default function Navbar({ toggle }) {
+
   return (
     <div className="w-full h-20 top-0 z-10 fixed navbar">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center h-full w-full p-10">
         <Link href="/" className="hover:text-white">
-          <div className="logo font-bold text-lg uppercase">Petra Sivonen</div>
+          <div className="text-lg">Petra Sivonen</div>
         </Link>
         <button
           type="button"
@@ -29,7 +30,7 @@ export default function Navbar({ toggle }) {
             </Link>
           </li>
           <li>
-            <Link href="/#about" className="nav-link">
+            <Link href="/#about">
               Minusta
             </Link>
           </li>

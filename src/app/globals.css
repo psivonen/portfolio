@@ -35,36 +35,31 @@ body {
   align-items: center;
   padding: 0rem 3rem;
   min-height: 100vh;
-  width: min(100%, 1420px);
+  width: min(100%, 1320px);
   margin: auto;
 }
 
-.section-container {
-  margin-top: 200px;
-  margin-bottom: 200px;
-}
-
-.heading-container {
-  margin-top: 180px;
-  margin-bottom: 200px;
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: min(100%, 1320px);
+  margin: auto;
 }
 
 .contact {
-  margin-top: 200px;
-  margin-bottom: 450px;
+  margin-bottom: 270px;
 }
 
-h1, h2 {
-  font-family: 'Syne';
-  font-weight: bold;
-}
-
-h3 {
+h1 {
+  font-family: 'Inter Tight', sans-serif;
   color: #a8a4be;
 }
 
 h4 {
-  font-family: 'Manrope';
+  color: #a8a4be;
 }
 
 p {
@@ -82,11 +77,23 @@ a:hover {
   color: #9056EB;
 }
 
+.arrowAnimate {
+  transition: transform 0.3s ease;
+  transform: rotate(-45deg);
+}
+
+.link-underline:hover .arrowAnimate {
+  transform: rotate(0deg);
+}
+
+.project:hover .arrowAnimate {
+  transform: rotate(0deg);
+}
+
 .link-underline:after {
   position: absolute;
   content: '';
   height: 1px;
-	/* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
   bottom: -4px; 
   margin: 0 auto;
 	left: 0;
@@ -103,11 +110,7 @@ a:hover {
 .navbar {
   margin-bottom: 100px;
   background: #110d26;
-  border-bottom: 1px solid #201d35;
-}
-
-.logo {
-  font-family: 'Syne';
+  border-bottom: 1px solid #343053;
 }
 
 .nav-links {
@@ -126,41 +129,21 @@ a:hover {
 }
 
 .contact-link {
-  font-family: 'Syne';
-}
-
-.section {
-  scroll-margin-top: 100px;
-}
-
-.active {
-  color: white;
-  margin: 10px;
-  font-size: 15px;
-  position: relative;
-  text-decoration: none;
-}
-
-.active:after {
-  content: '';
-  background: white;
-  height: 2px;
-  position: absolute;
-  bottom: -4px;
-  margin: 0 auto;
-	left: 0;
-  right: 0;
-	width: 100%;
+  font-family: 'Manrope';
 }
 
 .footer {
-  border-top: 1px solid #201d35;
+  border-top: 1px solid #343053;
   background: #110d26;
   color: #a8a4be;
 }
 
 .footer a {
   color: #fff
+}
+
+.section-button {
+  border: solid #a8a4be 1px;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -174,14 +157,4 @@ a:hover {
     margin-top: 150px;
     margin-bottom: 150px;
   }
-  .heading-container {
-    margin-top: 200px;
-  }
 }
-
-@media screen and (max-width: 500px) {
-  .main {
-    padding: 70px;
-  }
-}
-

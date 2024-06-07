@@ -7,7 +7,7 @@ const links = [
   { name: "Portfolio", to: "/#portfolio", id: 3 },
   { name: "Ota yhteyttä", to: "/#contact", id: 4 },
 ];
-
+// Framer Motion animation for main div
 const itemVariants = {
   closed: {
     opacity: 0,
@@ -20,7 +20,7 @@ const itemVariants = {
     transition: 0.6,
   },
 };
-
+// Framer Motion animation for children elements inside div
 const sideVariants = {
   closed: {
     transition: {

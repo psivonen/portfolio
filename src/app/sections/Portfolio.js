@@ -69,7 +69,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           variants={gridVariants}
         >
-          <Link href="/details/[id]" as={`details/${project.id}`}>
+          <Link href="/projects/[title]" as={`/projects/${project.title.toLowerCase().replace(/\s+/g, '-')}`}>
             <div className="aspect-[4/3] overflow-hidden">
               <Image
                 src={project.thumbnail}

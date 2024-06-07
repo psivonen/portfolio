@@ -3,25 +3,26 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowLongLeftIcon } from "@heroicons/react/20/solid";
 import { motion } from "framer-motion";
-
+import { useRouter } from 'next/router';
 /* This function is used to generate the paths for all static pages.
   It creates an array of paths by mapping over the projects array.
-  Each path is an object with a params property, where projectId is set to the string representation of the project's ID.
+  Each path is an object with a params property, where projectTitle is set to the slugified title of the project.
 */
 export async function getStaticPaths() {
   const paths = projects.map((project) => ({
-    params: { projectId: String(project.id) },
+    params: { projectTitle: project.title.toLowerCase().replace(/\s+/g, '-') }, // Generate slug from title
   }));
 
   return { paths, fallback: false };
 }
 /* This function is responsible for fetching the data for a specific path.
   It receives params as an argument, which contains the parameters for the current path.
-  It converts the projectId parameter to an integer and uses it to find the corresponding project in the projects array.
+  It uses the projectTitle parameter to find the corresponding project in the projects array.
 */
 export async function getStaticProps({ params }) {
-  const projectId = parseInt(params.projectId);
-  const project = projects.find((project) => project.id === projectId);
+  const project = projects.find((project) => 
+    params.projectTitle === project.title.toLowerCase().replace(/\s+/g, '-')
+  );
 
   return {
     props: {
@@ -31,6 +32,13 @@ export async function getStaticProps({ params }) {
 }
 
 export default function ProjectDetails({ project }) {
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
+
+  // Framer Motion animation for main div
   const projectVariants = {
     hide: {
       opacity: 0,
@@ -52,6 +60,7 @@ export default function ProjectDetails({ project }) {
     },
   };
 
+  // Framer Motion animation for children elements inside div
   const gridVariants = {
     hide: {
       opacity: 0,
@@ -74,7 +83,7 @@ export default function ProjectDetails({ project }) {
           <Image
             key={index}
             src={image}
-            alt={`Kuva ${index}`}
+            alt={`Image ${index}`}
             width={1000}
             height={300}
             unoptimized={true}
@@ -102,7 +111,7 @@ export default function ProjectDetails({ project }) {
               href="/#portfolio"
               className="opacity-30 hover:opacity-100 hover:text-white p-0 text-center inline-flex items-center"
             >
-              <ArrowLongLeftIcon className="h-6 w-6 inline-block me-3 p-0" />{" "}
+              <ArrowLongLeftIcon className="h-6 w-6 inline-block me-3 p-0" aria-hidden="true" />{" "}
               Portfolio
             </Link>
           </div>
@@ -132,11 +141,12 @@ export default function ProjectDetails({ project }) {
         >
           <Image
             src={project.thumbnail}
-            alt={"Projektin kansikuva"}
+            alt="Project thumbnail"
             width={1000}
             height={300}
             unoptimized={true}
             className="border border-gray-800 mt-10"
+            priority={true}
           />
         </motion.div>
         {/* Project key features */}
@@ -169,15 +179,14 @@ export default function ProjectDetails({ project }) {
           variants={gridVariants}
           initial="hide"
           whileInView="show"
-          viewport={{ once: true }}>
-        <h5 className="text-sm font-bold uppercase mb-1">
-          Johtopäätökset
-        </h5>
-        <p
-          className="lg:text-xl leading-8 lg:leading-10"
+          viewport={{ once: true }}
         >
-          {project.conclusion}
-        </p>
+          <h5 className="text-sm font-bold uppercase mb-1">
+            Johtopäätökset
+          </h5>
+          <p className="lg:text-xl leading-8 lg:leading-10">
+            {project.conclusion}
+          </p>
         </motion.div>
         {/* Project Demo and Github buttons */}
         <motion.div

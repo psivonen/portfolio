@@ -36,4 +36,4 @@ next-env.d.ts
 
 # data
 data.js
-/public/images
+/public/static/images

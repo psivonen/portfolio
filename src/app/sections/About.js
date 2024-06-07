@@ -98,11 +98,10 @@ export default function About() {
       </div>
       <motion.div className="lg:col-span-1 m-auto" variants={itemVariants}>
         <Image
-          src="images/petra-sivonen.jpg"
+          src="/images/petra-sivonen.jpg"
           alt="Petra Sivonen"
           width={400}
           height={1000}
-          unoptimized={true}
           className="object-cover mt-5 lg:mt-0"
         />
       </motion.div>
